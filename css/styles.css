@@ -1,21 +1,35 @@
-.navbar-size{
+.blue-navbar {
+    background-color: rgb(10, 109, 155);
+}
+
+.navbar-size {
     width: 95%;
     margin: 0auto;
-    }
-    .user-image-size{
+}
+
+.user-image-size {
     height: 56px;
     margin: 4px0;
-    }
-    .main-body{
-    background-color: #F28487;
+}
+
+.main-body {
+    background-color: #3ab1e9;
     color: white;
     height: calc(100vh-64px);
-    }
-    .materialboxed-image{
+}
+
+.materialboxed-image {
     margin: 0auto;
     height: 400px;
-    }
-    .click-me-button{
-    background-color: #EE6E73;
+}
+
+.click-me-button {
+    background-color: #47c2e0;
     margin-top: 50px;
-    }
+}
+
+.centered-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
