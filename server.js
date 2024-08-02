@@ -1,25 +1,12 @@
-const express = require("express")
-const app = express()
-const addTwoNumber = (n1,n2) => {
-    return n1+n2;
-}
+var express = require("express")
+var app = express()
 
+app.use(express.static(__dirname + '/'))
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-app.get("/addTwoNumber", (req,res)=>{
-    const n1 = parseInt(req.query.n1);
-    const n2 = parseInt(req.query.n1);
-    const result = addTwoNumber(req.query.n1);
-    res.json({statuscode:200, data: result});
-});
+var port = process.env.port || 3000;
 
-app.get("/", (req,res) =>{
-    const n1 = "<html><body><h1>HI THERE!</h1></body></html>";
-    res.set('content-Type', 'text/html');
-    res.send(Buffer.from(n1));
-})
-
-console.log (addTwoNumber(20,30));
-const port=3050;
-app.listen(port,()=>{
-    console.log("port no: "+port);
+app.listen(port, () => {
+    console.log("App listening to: " + port)
 })

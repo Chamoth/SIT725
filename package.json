@@ -1,14 +1,30 @@
 {
   "name": "sit725",
   "version": "1.0.0",
-  "description": "SIT725 Applied Software Engineering",
-  "main": "index.js",
+  "description": "SIT725 Applied Software Engineering Week 3 Practical",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "start": "node server.js"
   },
-  "author": "chamoth",
-  "license": "ISC",
+  "repository": {
+  "type": "git",
+  "url": "git+https://github.com/Chamoth/SIT725.git"
+  },
+  "keywords": [
+  "Nodejs",
+  "Express",
+  "Materialize",
+  "HTML",
+  "JS",
+  "CSS"
+  ],
+  "author": "Chamoth Devinda",
+  "license": "MIT",
+  "bugs": {
+  "url": "https://github.com/Chamoth/SIT725.git/issues"
+  },
+  "homepage": "https://github.com/Chamoth/SIT725.git#readme",
   "dependencies": {
-    "express": "^4.19.2"
+  "express": "^4.19.2"
   }
-}
+  }
