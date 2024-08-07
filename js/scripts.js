@@ -24,6 +24,20 @@ const submitForm = () => {
     formData.password = $('#password').val();
     formData.email = $('#email').val();
     console.log("Form Data Submitted: ", formData);
+
+    $.ajax({
+        url: '/api/forms',  // Adjust the URL as per your setup
+        type: 'POST',
+        data: JSON.stringify(formData),
+        contentType: 'application/json; charset=utf-8',
+        success: function(response) {
+            console.log("Form data saved successfully!");
+            alert("Details stored successfully!");
+        },
+        error: function(error) {
+            console.log("Error saving form data: ", error);
+        }
+    });
 };
 
 const addCards = (items) => {
@@ -47,11 +61,25 @@ const addCards = (items) => {
     });
 };
 
+const fetchCards = () => {
+    $.ajax({
+        url: '/api/cards',  // Adjust the URL as per your setup
+        type: 'GET',
+        success: function(cards) {
+            addCards(cards);
+        },
+        error: function(error) {
+            console.log("Error fetching cards: ", error);
+        }
+    });
+};
+
 $(document).ready(function () {
     $('.materialboxed').materialbox();
     $('#formSubmit').click(() => {
         submitForm();
     });
     addCards(cardList);
+    fetchCards();  // Fetch and display cards from the server
     $('.modal').modal();
 });
