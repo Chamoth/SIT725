@@ -1,35 +1,26 @@
-.blue-navbar {
-    background-color: rgb(10, 109, 155);
+.bg-info-subtle {
+    background-color: #d1ecf1;
 }
 
-.navbar-size {
-    width: 95%;
-    margin: 0auto;
+.tag {
+    color: rgb(255, 21, 165);
 }
 
-.user-image-size {
-    height: 56px;
-    margin: 4px0;
+.nav-link:hover,
+.nav-link.active {
+    font-weight: bold;
 }
 
-.main-body {
-    background-color: #3ab1e9;
+.error {
+    color: red;
+}
+
+.success {
+    color: rgb(185, 5, 5);
+}
+
+.card-title {
+    background-color: rgba(255, 21, 21, 0.8);
     color: white;
-    height: calc(100vh-64px);
-}
-
-.materialboxed-image {
-    margin: 0auto;
-    height: 400px;
-}
-
-.click-me-button {
-    background-color: #47c2e0;
-    margin-top: 50px;
-}
-
-.centered-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 10px;
 }

@@ -1,57 +1,32 @@
-const cardList = [
-    {
-        title: "Kitten 2",
-        image: "images/kitten-2.jpg",
-        link: "About Kitten 2",
-        description: "Demo description about kitten 2"
-    },
-    {
-        title: "Kitten 3",
-        image: "images/kitten-3.jpg",
-        link: "About Kitten 3",
-        description: "Demo description about kitten 3"
+// Function to validate input fields as the user types
+function validateInput(inputId, messageSpanId, pattern, errorMessage) {
+    var input = document.getElementById(inputId);
+    var messageSpan = document.getElementById(messageSpanId);
+    var isValid = pattern.test(input.value);
+    if (isValid) {
+        messageSpan.textContent = '';
+        input.classList.remove('is-invalid');
+    } else {
+        messageSpan.textContent = errorMessage;
+        input.classList.add('is-invalid');
     }
-];
+    return isValid;
+}
 
-const clickMe = () => {
-    alert("Thanks for clicking me. Hope you have a nice day!");
-};
+// Function to validate the entire form before submission
+function validateForm() {
+    var isValidName = validateInput('name', 'nameMsg', /^[a-zA-Z\s]+$/, 'Please enter a valid full name');
+    var isValidEmail = validateInput('email', 'emailMsg', /^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Please enter a valid email address');
+    var isValidPhone = validateInput('phone', 'phoneMsg', /^\d{10}$/, 'Phone number must be exactly 10 digits');
+    var isValidQuery = validateInput('query', 'queryMsg', /^(?!\s*$).+/, 'Please enter your query/feedback');
 
-const submitForm = () => {
-    let formData = {};
-    formData.first_name = $('#first_name').val();
-    formData.last_name = $('#last_name').val();
-    formData.password = $('#password').val();
-    formData.email = $('#email').val();
-    console.log("Form Data Submitted: ", formData);
-};
+    var errorMessage = document.getElementById('errorMessage');
 
-const addCards = (items) => {
-    items.forEach(item => {
-        let itemToAppend = `<div class="col s4 center-align">
-            <div class="card medium">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="${item.image}">
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator grey-text text-darken-4">${item.title}<i class="material-icons right">more_vert</i></span>
-                    <p><a href="#">${item.link}</a></p>
-                </div>
-                <div class="card-reveal">
-                    <span class="card-title grey-text text-darken-4">${item.title}<i class="material-icons right">close</i></span>
-                    <p class="card-text">${item.description}</p>
-                </div>
-            </div>
-        </div>`;
-        $("#card-section").append(itemToAppend);
-    });
-};
-
-$(document).ready(function () {
-    $('.materialboxed').materialbox();
-    $('#formSubmit').click(() => {
-        submitForm();
-    });
-    addCards(cardList);
-    $('.modal').modal();
-});
+    if (isValidName && isValidEmail && isValidPhone && isValidQuery) {
+        errorMessage.textContent = '';
+        return true;
+    } else {
+        errorMessage.textContent = 'Please fix the errors in the form before submitting.';
+        return false;
+    }
+}
