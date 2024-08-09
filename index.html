@@ -20,7 +20,8 @@
     <nav class="nav nav-pills flex-column flex-sm-row navbar-dark bg-danger">
         <a class="flex-sm-fill text-sm-center nav-link text-white" aria-current="page" href="index.html">Home</a>
         <a class="flex-sm-fill text-sm-center nav-link text-white" href="products.html">Products</a>
-        <a class="flex-sm-fill text-sm-center nav-link text-white" href="https://www.linkedin.com/in/chamoth-devinda/">Linkedin</a>
+        <a class="flex-sm-fill text-sm-center nav-link text-white"
+            href="https://www.linkedin.com/in/chamoth-devinda/">Linkedin</a>
         <a class="flex-sm-fill text-sm-center nav-link text-white" href="index.html">Contact Us</a>
         <form class="d-flex flex-grow-1 ms-sm-3">
             <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
@@ -46,7 +47,8 @@
                         <span class="card-title">Custom Handcrafted Items</span>
                     </div>
                     <div class="card-content">
-                        <p>We offer a wide range of handcrafted items tailored to your preferences, including custom designs and materials.</p>
+                        <p>We offer a wide range of handcrafted items tailored to your preferences, including custom
+                            designs and materials.</p>
                     </div>
                 </div>
             </div>
@@ -57,7 +59,8 @@
                         <span class="card-title">Personalized Gifts</span>
                     </div>
                     <div class="card-content">
-                        <p>Choose from a variety of personalized gift options, perfect for any occasion, with unique handcrafted details.</p>
+                        <p>Choose from a variety of personalized gift options, perfect for any occasion, with unique
+                            handcrafted details.</p>
                     </div>
                 </div>
             </div>
@@ -68,7 +71,8 @@
                         <span class="card-title">Workshops & Classes</span>
                     </div>
                     <div class="card-content">
-                        <p>Join our workshops to learn the art of crafting from experienced artisans. Perfect for beginners and enthusiasts.</p>
+                        <p>Join our workshops to learn the art of crafting from experienced artisans. Perfect for
+                            beginners and enthusiasts.</p>
                     </div>
                 </div>
             </div>
@@ -86,30 +90,36 @@
                     <p><strong>Email:</strong> info@handcrafts.com</p>
                     <p><strong>Working Hours:</strong> Mon-Fri, 9:00 AM - 5:00 PM</p><br>
                     <h3>Map</h3><br>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3147.889717888883!2d145.19527047555664!3d-37.909640339523136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad63e274998c3a1%3A0x113836c243c811af!2s2%20Haversham%20Ave%2C%20Wheelers%20Hill%20VIC%203150!5e0!3m2!1sen!2sau!4v1714616585143!5m2!1sen!2sau"
-                        width="80%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3147.889717888883!2d145.19527047555664!3d-37.909640339523136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad63e274998c3a1%3A0x113836c243c811af!2s2%20Haversham%20Ave%2C%20Wheelers%20Hill%20VIC%203150!5e0!3m2!1sen!2sau!4v1714616585143!5m2!1sen!2sau"
+                        width="80%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div class="col-md-6">
                     <h3>Query/Feedback Form</h3><br>
                     <form id="queryForm" onsubmit="return validateForm()">
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" required oninput="validateInput('name', 'nameMsg', /^[a-zA-Z\s]+$/, 'Please enter a valid full name')">
+                            <input type="text" class="form-control" id="name" name="name" required
+                                oninput="validateInput('name', 'nameMsg', /^[a-zA-Z\s]+$/, 'Please enter a valid full name')">
                             <span id="nameMsg"></span>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="email" name="email" required oninput="validateInput('email', 'emailMsg', /^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Please enter a valid email address')">
+                            <input type="email" class="form-control" id="email" name="email" required
+                                oninput="validateInput('email', 'emailMsg', /^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Please enter a valid email address')">
                             <span id="emailMsg" class="error"></span>
                         </div>
                         <div class="mb-3">
                             <label for="phone" class="form-label">Phone</label>
-                            <input type="tel" class="form-control" id="phone" name="phone" required oninput="validateInput('phone', 'phoneMsg', /^\d{10}$/, 'Phone number must be exactly 10 digits')">
+                            <input type="tel" class="form-control" id="phone" name="phone" required
+                                oninput="validateInput('phone', 'phoneMsg', /^\d{10}$/, 'Phone number must be exactly 10 digits')">
                             <span id="phoneMsg" class="error"></span>
                         </div>
                         <div class="mb-3">
                             <label for="query" class="form-label">Query/Feedback</label>
-                            <textarea class="form-control" id="query" rows="3" required oninput="validateInput('query', 'queryMsg', /^(?!\s*$).+/, 'Please enter your query/feedback')"></textarea>
+                            <textarea class="form-control" id="query" rows="3" required
+                                oninput="validateInput('query', 'queryMsg', /^(?!\s*$).+/, 'Please enter your query/feedback')"></textarea>
                             <span id="queryMsg"></span>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
@@ -129,6 +139,9 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="js/scripts.js"></script>

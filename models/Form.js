@@ -1,10 +1,23 @@
-var mongoose = require("mongoose");
+// var mongoose = require("mongoose");
 
-var formSchema = new mongoose.Schema({
-    first_name: String,
-    last_name: String,
-    password: String,
-    email: String
-});
+// var formSchema = new mongoose.Schema({
+//     name: {
+//         type: String,
+//         required: true
+//     },
+//     email: {
+//         type: String,
+//         required: true,
+//         unique: true
+//     },
+//     phone: {
+//         type: String,
+//         required: true
+//     },
+//     query: {
+//         type: String,
+//         required: true
+//     }
+// });
 
-module.exports = mongoose.model("Form", formSchema);
+// module.exports = mongoose.model("Form", formSchema);
