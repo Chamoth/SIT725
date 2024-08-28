@@ -1,12 +1,12 @@
-const Form = require('../models/formModel');
+import Form from '../models/formModel.js'; // Adjust import path if necessary
 
 // Render the contact form page
-exports.renderFormPage = (req, res) => {
+export const renderFormPage = (req, res) => {
     res.render('formView', { title: 'Handcrafted Items by Chamoth' });
 };
 
 // Handle form submission
-exports.submitForm = async (req, res) => {
+export const submitForm = async (req, res) => {
     const { name, email, phone, query } = req.body;
     
     try {

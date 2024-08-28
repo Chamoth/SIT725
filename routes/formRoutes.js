@@ -1,6 +1,6 @@
-const express = require('express');
+import express from 'express';
 const router = express.Router();
-const formController = require('../controllers/formController');
+import * as formController from '../controllers/formController.js'; // Adjust import path if necessary
 
 // Route to display the form page
 router.get('/contact', formController.renderFormPage);
@@ -8,4 +8,4 @@ router.get('/contact', formController.renderFormPage);
 // Route to handle form submissions
 router.post('/submit-form', formController.submitForm);
 
-module.exports = router;
+export default router;
