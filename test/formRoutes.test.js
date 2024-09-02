@@ -21,8 +21,8 @@ describe('Form Routes', function () {
   it('should handle form submission on POST /submit-form', function (done) {
     const formData = {
       name: 'John Doe',
-      email: 'johndoe@example.com',
-      phone: '0718085827',
+      email: 'chamoth@testcases.com',
+      phone: '0452665435',
       query: 'This is a test message'
     };
 
