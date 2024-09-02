@@ -1,12 +1,13 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
+// Define the Form schema
 const formSchema = new mongoose.Schema({
-    name: String,
-    email: String,
-    phone: String,
-    query: String,
+    name: { type: String, required: true },
+    email: { type: String, required: true },
+    phone: { type: String, required: true },
+    query: { type: String, required: true }
 });
 
+// Create and export the Form model
 const Form = mongoose.model('Form', formSchema);
-
-export default Form;
+module.exports = Form;
