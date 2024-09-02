@@ -1,39 +1,36 @@
 {
   "name": "sit725",
   "version": "1.0.0",
-  "description": "SIT725 Applied Software Engineering Week 3 Practical",
-  "main": "server.js",
-  "type": "module",
+  "description": "",
+  "main": "app.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "set PORT=3001 && mocha --reporter spec"
+    "test": "mocha --reporter spec",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Chamoth/SIT725.git"
   },
-  "keywords": [
-    "Nodejs",
-    "Express",
-    "Materialize",
-    "HTML",
-    "JS",
-    "CSS"
-  ],
-  "author": "Chamoth Devinda",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/Chamoth/SIT725.git/issues"
   },
   "homepage": "https://github.com/Chamoth/SIT725.git#readme",
   "dependencies": {
-    "body-parser": "^1.20.2",
-    "chai": "^5.1.1",
-    "chai-http": "^4.4.0",
+    "chai": "^4.3.7",
+    "ejs": "^3.1.10",
     "express": "^4.19.2",
-    "mocha": "^10.7.3",
+    "http": "^0.0.1-security",
+    "mocha": "^10.2.0",
     "mongodb": "^6.8.0",
     "mongoose": "^8.5.2",
-    "request": "^2.88.2"
+    "nodemon": "^3.0.1",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9",
+    "socket.io": "^4.7.2"
+  },
+  "devDependencies": {
+    "supertest": "^7.0.0"
   }
 }
