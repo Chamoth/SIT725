@@ -1,20 +1,23 @@
-import Form from '../models/formModel.js'; // Adjust import path if necessary
+const Form = require('../models/formModel');
 
 // Render the contact form page
-export const renderFormPage = (req, res) => {
+exports.renderFormPage = (req, res) => {
     res.render('formView', { title: 'Handcrafted Items by Chamoth' });
 };
 
 // Handle form submission
-export const submitForm = async (req, res) => {
-    const { name, email, phone, query } = req.body;
-    
+exports.submitForm = async (req, res) => {
     try {
-        const newForm = new Form({ name, email, phone, query });
-        await newForm.save();
-        res.status(200).json({ message: 'Form data saved successfully!' });
+        const { name, email, phone, query } = req.body; // Matching the fields in formModel
+        const form = new Form({ name, email, phone, query });
+        await form.save();
+        res.status(200).json({ success: true });
     } catch (error) {
         console.error('Error saving form data:', error);
-        res.status(500).json({ message: 'Error saving form data' });
+        res.status(400).json({
+            success: false,
+            error: error.message,
+        });
     }
 };
+
