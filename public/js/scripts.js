@@ -1,3 +1,6 @@
+// Connect to socket.io server
+const socket = io();
+
 // Function to validate individual inputs
 function validateInput(inputId, msgId, regex, errorMsg) {
     const inputElement = document.getElementById(inputId);
@@ -38,20 +41,16 @@ document.getElementById('queryForm').addEventListener('submit', function (event)
         query: document.getElementById('query').value
     };
 
-    fetch('/submit-form', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Success:', data);
-        document.getElementById('errorMessage').textContent = 'Form submitted successfully!';
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-        document.getElementById('errorMessage').textContent = 'An error occurred. Please try again.';
+    // Emit form data to server via socket.io
+    socket.emit('submit-form', formData);
+
+    // Handle response from server
+    socket.on('form-response', (response) => {
+        if (response.success) {
+            document.getElementById('errorMessage').textContent = response.message;
+            console.log('Form submitted successfully!'); // Print success message to the browser console
+        } else {
+            document.getElementById('errorMessage').textContent = 'An error occurred. Please try again.';
+        }
     });
 });

@@ -28,7 +28,8 @@
     "nodemon": "^3.0.1",
     "request": "^2.88.2",
     "request-promise-native": "^1.0.9",
-    "socket.io": "^4.7.2"
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5"
   },
   "devDependencies": {
     "supertest": "^7.0.0"

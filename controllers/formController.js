@@ -1,14 +1,11 @@
+// formController.js
 const Form = require('../models/formModel');
-
-// Render the contact form page
-exports.renderFormPage = (req, res) => {
-    res.render('formView', { title: 'Handcrafted Items by Chamoth' });
-};
 
 // Handle form submission
 exports.submitForm = async (req, res) => {
     try {
-        const { name, email, phone, query } = req.body; // Matching the fields in formModel
+        // If using Socket.IO, `req.body` might not be present
+        const { name, email, phone, query } = req.body || req; // Fallback to `req` if `req.body` is undefined
         const form = new Form({ name, email, phone, query });
         await form.save();
         res.status(200).json({ success: true });
@@ -20,4 +17,3 @@ exports.submitForm = async (req, res) => {
         });
     }
 };
-
